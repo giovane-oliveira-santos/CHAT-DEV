@@ -65,7 +65,7 @@ const processMessage = ({ data }) => {
   scrollScreen();
 };
 
-const handleSubmit = (event) => {
+const handlelogin = (event) => {
   event.preventDefault();
 
   user.id = crypto.randomUUID();
@@ -75,7 +75,7 @@ const handleSubmit = (event) => {
   login.style.display = "none";
   chat.style.display = "flex";
 
-  websocket = new WebSocket("wss://chat-dev-backend.onrender.com");
+  websocket = new WebSocket("wss://chat-dev-frontend.onrender.com");
   websocket.onmessage = processMessage;
 
   //console.log(user);
